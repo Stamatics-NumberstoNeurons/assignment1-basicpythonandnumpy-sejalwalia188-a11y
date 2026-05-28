@@ -1,0 +1,2098 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNGhWAj+Je7y5iA0kFbMj/3",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Stamatics-NumberstoNeurons/assignment1-basicpythonandnumpy-sejalwalia188-a11y/blob/main/Sejal_Asgn_1\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "7impPbQaqCAg"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex 1"
+      ],
+      "metadata": {
+        "id": "Q9a9TB6QqOHq"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(np.__version__)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VkH9mvTEqNsl",
+        "outputId": "d3889b36-df60-49b0-d23f-70952631ad69"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2.0.2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex2"
+      ],
+      "metadata": {
+        "id": "fes3iq_5qxUE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr=np.arange(10)\n",
+        "arr"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "I1Vu6GOJqlcZ",
+        "outputId": "799599b9-697a-4198-edc2-d8e6424adc6a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 12
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex3"
+      ],
+      "metadata": {
+        "id": "Fw9RKtWzq2HP"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(np.ones((3,3),dtype=bool))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "b-MBLlbKq1SD",
+        "outputId": "a44ec178-5aa7-4917-c4f7-3996f5510f5e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ True  True  True]\n",
+            " [ True  True  True]\n",
+            " [ True  True  True]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex4"
+      ],
+      "metadata": {
+        "id": "btyuqRADrULX"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr=np.array([0,1,2,3,4,5,6,7,8,9])\n",
+        "for i in arr:\n",
+        "    if(i%2==1):\n",
+        "        print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7JUO6icrrVgT",
+        "outputId": "54be33c3-5971-40cb-ba5b-73aaf61eb1da"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "3\n",
+            "5\n",
+            "7\n",
+            "9\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex 5"
+      ],
+      "metadata": {
+        "id": "rl7ipJDesL3g"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr=np.array([0,1,2,3,4,5,6,7,8,9])\n",
+        "for i in range(10):\n",
+        "  if(i%2==1):\n",
+        "    arr[i]=-1\n",
+        "print(arr)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aqtM_1axsMy4",
+        "outputId": "d4203ca1-2f94-48db-c7c0-a3fbaa9e39c3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[ 0 -1  2 -1  4 -1  6 -1  8 -1]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex6"
+      ],
+      "metadata": {
+        "id": "KZLBoiCrtIbd"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr=np.array([0,1,2,3,4,5,6,7,8,9])\n",
+        "arr_1=arr\n",
+        "for i in range(10):\n",
+        "  if(i%2==1):\n",
+        "    arr[i]=-1\n",
+        "print(arr_1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "p3FGf2RGtKky",
+        "outputId": "b0c3f5ee-5492-42e7-d61b-ef50997f5948"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[ 0 -1  2 -1  4 -1  6 -1  8 -1]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex 7"
+      ],
+      "metadata": {
+        "id": "Z2LRIqiTtv_t"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.arange(10)\n",
+        "arr.reshape(2,5)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QY9nJaZrtuoa",
+        "outputId": "0ae9fab3-7b53-4646-8bff-72e91ba32044"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[0, 1, 2, 3, 4],\n",
+              "       [5, 6, 7, 8, 9]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 17
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex 8"
+      ],
+      "metadata": {
+        "id": "3HZIjDG5uJMP"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = np.arange(10).reshape(2,-1)\n",
+        "b = np.repeat(1, 10).reshape(2,-1)\n",
+        "print(np.vstack((a,b)))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "X6PZnWeEuKJS",
+        "outputId": "cab780ff-fb3a-43d0-f449-5a5793a60a39"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[0 1 2 3 4]\n",
+            " [5 6 7 8 9]\n",
+            " [1 1 1 1 1]\n",
+            " [1 1 1 1 1]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex 9"
+      ],
+      "metadata": {
+        "id": "rhlsGlkIufWh"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = np.arange(10).reshape(2,-1)\n",
+        "b = np.repeat(1, 10).reshape(2,-1)\n",
+        "print(np.hstack((a,b)))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1Y_WxBZdugR8",
+        "outputId": "866259fb-bb49-4e11-8594-c927640e5c01"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[0 1 2 3 4 1 1 1 1 1]\n",
+            " [5 6 7 8 9 1 1 1 1 1]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex10"
+      ],
+      "metadata": {
+        "id": "Tu-i9v6juzei"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = np.array([1, 2, 3])\n",
+        "result = np.r_[np.repeat(a, 3), np.tile(a, 3)]\n",
+        "\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3ID1fnA1u0k7",
+        "outputId": "677d125b-e10c-440f-dc2a-36f0c4ec3241"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1 1 1 2 2 2 3 3 3 1 2 3 1 2 3 1 2 3]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex11"
+      ],
+      "metadata": {
+        "id": "iYCuOIrovdl4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = np.array([1,2,3,2,3,4,3,4,5,6])\n",
+        "b = np.array([7,2,10,2,7,4,9,4,9,8])\n",
+        "print(np.intersect1d(a,b))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pPm_3aRdve3K",
+        "outputId": "1d78becf-3c49-413e-b829-d6598bd6f5af"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[2 4]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex12"
+      ],
+      "metadata": {
+        "id": "xaev95cxv3Aw"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = np.array([1,2,3,4,5])\n",
+        "b = np.array([5,6,7,8,9])\n",
+        "print(np.setdiff1d(a,b))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JJ5NEsPsvq-8",
+        "outputId": "8ab9ffba-bdc4-4648-871e-1fd403278afa"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1 2 3 4]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex13"
+      ],
+      "metadata": {
+        "id": "r_Xr-pSkv4a6"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = np.array([1,2,3,2,3,4,3,4,5,6])\n",
+        "b = np.array([7,2,10,2,7,4,9,4,9,8])\n",
+        "for i in range(10):\n",
+        "  if(a[i]==b[i]):\n",
+        "    print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Y-eUtsp_v5XX",
+        "outputId": "38b8f715-ffd2-48a1-ae86-6277789348fb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "3\n",
+            "5\n",
+            "7\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex14"
+      ],
+      "metadata": {
+        "id": "dqdC6GYTwEpz"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = np.array([2, 6, 1, 9, 10, 3, 27])\n",
+        "print(a[(a >= 5) & (a <= 10)])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8aOsM_x7wG4A",
+        "outputId": "1cfe707b-f190-4065-9c30-78bfb2258d41"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[ 6  9 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex15"
+      ],
+      "metadata": {
+        "id": "8Tn1V3nGwj6y"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def maxx(a, b):\n",
+        "    if a >= b:\n",
+        "        return a\n",
+        "    else:\n",
+        "        return b\n",
+        "\n",
+        "a = np.array([5, 7, 9, 8, 6, 4, 5])\n",
+        "b = np.array([6, 3, 4, 8, 9, 7, 1])\n",
+        "\n",
+        "vectorized_maxx=np.vectorize(maxx)\n",
+        "print(vectorized_maxx(a,b))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-gcP7gqlwjFV",
+        "outputId": "29dbe5c9-5e14-4495-b891-4e06a76deac8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[6 7 9 8 9 7 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex16"
+      ],
+      "metadata": {
+        "id": "1VrtNEpEyjpi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.arange(9).reshape(3,3)\n",
+        "arr_1=arr[:,[0,2,1]]\n",
+        "print(arr_1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PsglGbr2yjUK",
+        "outputId": "52d1b959-223a-4f22-8798-550c00e8f27f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[0 2 1]\n",
+            " [3 5 4]\n",
+            " [6 8 7]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex17"
+      ],
+      "metadata": {
+        "id": "uNH_vbHFzHxW"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.arange(9).reshape(3,3)\n",
+        "arr_1=arr[[0,2,1],:]\n",
+        "print(arr_1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oTZ5hHAYzJDa",
+        "outputId": "11c8db19-1f8f-46c7-a2ca-9181db7770cf"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[0 1 2]\n",
+            " [6 7 8]\n",
+            " [3 4 5]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex18"
+      ],
+      "metadata": {
+        "id": "dQV-al_ozigd"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.arange(9).reshape(3,3)\n",
+        "arr_1=arr[::-1]\n",
+        "print(arr_1)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1H9Kv85GzJhr",
+        "outputId": "51e540f9-e214-4eb3-94f9-65adfae86c8d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[6 7 8]\n",
+            " [3 4 5]\n",
+            " [0 1 2]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex19"
+      ],
+      "metadata": {
+        "id": "xzQD2l1Hz0xH"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.arange(9).reshape(3,3)\n",
+        "arr_1=arr[:,::-1]\n",
+        "print(arr_1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "05cYl1vYz2Tz",
+        "outputId": "5575d0dc-35a8-4edd-df73-3117c7aa2589"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[2 1 0]\n",
+            " [5 4 3]\n",
+            " [8 7 6]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex20"
+      ],
+      "metadata": {
+        "id": "78pG2pds0Bv5"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr=np.random.uniform(5,10,size=(5,3))\n",
+        "print(arr)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Qjn3wt_U0DCd",
+        "outputId": "ba0bc593-0d5c-415d-ad0c-c55786faf964"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[9.27495653 8.37695918 6.65161185]\n",
+            " [7.47914841 9.36199966 7.32485561]\n",
+            " [8.01390843 8.92624957 9.80605314]\n",
+            " [6.38503903 9.20853199 5.34704055]\n",
+            " [8.88668828 5.9159375  7.68529954]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex21"
+      ],
+      "metadata": {
+        "id": "UST-RmDA0kpR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "rand_arr = np.random.random((5,3))\n",
+        "print(rand_arr.round(3))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PiQyhfit0mg5",
+        "outputId": "dc04690f-4ad9-4cb9-e7d3-1b6bb964e663"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[0.806 0.47  0.395]\n",
+            " [0.059 0.529 0.623]\n",
+            " [0.629 0.657 0.373]\n",
+            " [0.788 0.194 0.885]\n",
+            " [0.323 0.522 0.325]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex22"
+      ],
+      "metadata": {
+        "id": "lcATUz0G1NMo"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.random.seed(100)\n",
+        "rand_arr = np.random.random([3,3])/1e3\n",
+        "np.set_printoptions(suppress=True, precision=6)\n",
+        "print(rand_arr)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "81MFvxQK1OnO",
+        "outputId": "5f5278e5-5230-41bd-bb31-772f1d44ae0b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[0.000543 0.000278 0.000425]\n",
+            " [0.000845 0.000005 0.000122]\n",
+            " [0.000671 0.000826 0.000137]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex23"
+      ],
+      "metadata": {
+        "id": "g4en8RqH2It3"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = np.arange(15)\n",
+        "np.set_printoptions(threshold=6)\n",
+        "print(a)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "A0szbQcx11tR",
+        "outputId": "7a6ee95e-f52f-4c1b-9903-3fc3939d9a66"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[ 0  1  2 ... 12 13 14]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex24"
+      ],
+      "metadata": {
+        "id": "dXb1IXeA2Jwi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "np.set_printoptions(threshold=6)\n",
+        "a = np.arange(15)\n",
+        "np.set_printoptions(threshold=15)\n",
+        "a"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hwgS32iN2Kv0",
+        "outputId": "4fe798d0-b0f0-4d24-bc17-5e3a22ccb088"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 34
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd"
+      ],
+      "metadata": {
+        "id": "zQL6r2_N2IPz"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df=pd.read_csv('https://raw.githubusercontent.com/selva86/datasets/master/Auto.csv')"
+      ],
+      "metadata": {
+        "id": "ZBW3j17o3ET0"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.head()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 347
+        },
+        "id": "mrCDbBQ03LdT",
+        "outputId": "421868d8-01e8-42d9-db16-de81ca2769f5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "    mpg  cylinders  displacement  horsepower  weight  acceleration  year  \\\n",
+              "0  18.0          8         307.0         130    3504          12.0    70   \n",
+              "1  15.0          8         350.0         165    3693          11.5    70   \n",
+              "2  18.0          8         318.0         150    3436          11.0    70   \n",
+              "3  16.0          8         304.0         150    3433          12.0    70   \n",
+              "4  17.0          8         302.0         140    3449          10.5    70   \n",
+              "\n",
+              "   origin                       name  \n",
+              "0       1  chevrolet chevelle malibu  \n",
+              "1       1          buick skylark 320  \n",
+              "2       1         plymouth satellite  \n",
+              "3       1              amc rebel sst  \n",
+              "4       1                ford torino  "
+            ],
+            "text/html": [
+              "\n",
+              "  <div id=\"df-064891dc-e158-4daf-bbc8-2609f46f31fb\" class=\"colab-df-container\">\n",
+              "    <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>mpg</th>\n",
+              "      <th>cylinders</th>\n",
+              "      <th>displacement</th>\n",
+              "      <th>horsepower</th>\n",
+              "      <th>weight</th>\n",
+              "      <th>acceleration</th>\n",
+              "      <th>year</th>\n",
+              "      <th>origin</th>\n",
+              "      <th>name</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>18.0</td>\n",
+              "      <td>8</td>\n",
+              "      <td>307.0</td>\n",
+              "      <td>130</td>\n",
+              "      <td>3504</td>\n",
+              "      <td>12.0</td>\n",
+              "      <td>70</td>\n",
+              "      <td>1</td>\n",
+              "      <td>chevrolet chevelle malibu</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>15.0</td>\n",
+              "      <td>8</td>\n",
+              "      <td>350.0</td>\n",
+              "      <td>165</td>\n",
+              "      <td>3693</td>\n",
+              "      <td>11.5</td>\n",
+              "      <td>70</td>\n",
+              "      <td>1</td>\n",
+              "      <td>buick skylark 320</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>18.0</td>\n",
+              "      <td>8</td>\n",
+              "      <td>318.0</td>\n",
+              "      <td>150</td>\n",
+              "      <td>3436</td>\n",
+              "      <td>11.0</td>\n",
+              "      <td>70</td>\n",
+              "      <td>1</td>\n",
+              "      <td>plymouth satellite</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>16.0</td>\n",
+              "      <td>8</td>\n",
+              "      <td>304.0</td>\n",
+              "      <td>150</td>\n",
+              "      <td>3433</td>\n",
+              "      <td>12.0</td>\n",
+              "      <td>70</td>\n",
+              "      <td>1</td>\n",
+              "      <td>amc rebel sst</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>17.0</td>\n",
+              "      <td>8</td>\n",
+              "      <td>302.0</td>\n",
+              "      <td>140</td>\n",
+              "      <td>3449</td>\n",
+              "      <td>10.5</td>\n",
+              "      <td>70</td>\n",
+              "      <td>1</td>\n",
+              "      <td>ford torino</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "    <div class=\"colab-df-buttons\">\n",
+              "\n",
+              "  <div class=\"colab-df-container\">\n",
+              "    <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-064891dc-e158-4daf-bbc8-2609f46f31fb')\"\n",
+              "            title=\"Convert this dataframe to an interactive table.\"\n",
+              "            style=\"display:none;\">\n",
+              "\n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\" viewBox=\"0 -960 960 960\">\n",
+              "    <path d=\"M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z\"/>\n",
+              "  </svg>\n",
+              "    </button>\n",
+              "\n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-buttons div {\n",
+              "      margin-bottom: 4px;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "    <script>\n",
+              "      const buttonEl =\n",
+              "        document.querySelector('#df-064891dc-e158-4daf-bbc8-2609f46f31fb button.colab-df-convert');\n",
+              "      buttonEl.style.display =\n",
+              "        google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "      async function convertToInteractive(key) {\n",
+              "        const element = document.querySelector('#df-064891dc-e158-4daf-bbc8-2609f46f31fb');\n",
+              "        const dataTable =\n",
+              "          await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                    [key], {});\n",
+              "        if (!dataTable) return;\n",
+              "\n",
+              "        const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "          '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "          + ' to learn more about interactive tables.';\n",
+              "        element.innerHTML = '';\n",
+              "        dataTable['output_type'] = 'display_data';\n",
+              "        await google.colab.output.renderOutput(dataTable, element);\n",
+              "        const docLink = document.createElement('div');\n",
+              "        docLink.innerHTML = docLinkHtml;\n",
+              "        element.appendChild(docLink);\n",
+              "      }\n",
+              "    </script>\n",
+              "  </div>\n",
+              "\n",
+              "\n",
+              "    </div>\n",
+              "  </div>\n"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "dataframe",
+              "variable_name": "df",
+              "summary": "{\n  \"name\": \"df\",\n  \"rows\": 392,\n  \"fields\": [\n    {\n      \"column\": \"mpg\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 7.805007486571799,\n        \"min\": 9.0,\n        \"max\": 46.6,\n        \"num_unique_values\": 127,\n        \"samples\": [\n          17.5,\n          35.1,\n          28.8\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"cylinders\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 1,\n        \"min\": 3,\n        \"max\": 8,\n        \"num_unique_values\": 5,\n        \"samples\": [\n          4,\n          5,\n          6\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"displacement\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 104.64400390890465,\n        \"min\": 68.0,\n        \"max\": 455.0,\n        \"num_unique_values\": 81,\n        \"samples\": [\n          116.0,\n          307.0,\n          360.0\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"horsepower\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 38,\n        \"min\": 46,\n        \"max\": 230,\n        \"num_unique_values\": 93,\n        \"samples\": [\n          92,\n          100,\n          52\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"weight\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 849,\n        \"min\": 1613,\n        \"max\": 5140,\n        \"num_unique_values\": 346,\n        \"samples\": [\n          2472,\n          3221,\n          2700\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"acceleration\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 2.7588641191880816,\n        \"min\": 8.0,\n        \"max\": 24.8,\n        \"num_unique_values\": 95,\n        \"samples\": [\n          14.7,\n          18.0,\n          14.3\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"year\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 3,\n        \"min\": 70,\n        \"max\": 82,\n        \"num_unique_values\": 13,\n        \"samples\": [\n          81,\n          79,\n          70\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"origin\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 0,\n        \"min\": 1,\n        \"max\": 3,\n        \"num_unique_values\": 3,\n        \"samples\": [\n          1,\n          3,\n          2\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"name\",\n      \"properties\": {\n        \"dtype\": \"string\",\n        \"num_unique_values\": 301,\n        \"samples\": [\n          \"subaru dl\",\n          \"buick century limited\",\n          \"plymouth horizon\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    }\n  ]\n}"
+            }
+          },
+          "metadata": {},
+          "execution_count": 37
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "url = 'https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv'\n",
+        "iris = np.genfromtxt(url, delimiter=',', dtype='object')"
+      ],
+      "metadata": {
+        "id": "rF2CJzxu3PFM"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "species = iris[:, 4]\n",
+        "print(species[:5])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "OCLQdyTwX4dM",
+        "outputId": "0d1b210e-c889-4677-c781-86a726907dc8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[b'Iris-setosa' b'Iris-setosa' b'Iris-setosa' b'Iris-setosa'\n",
+            " b'Iris-setosa']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex 27"
+      ],
+      "metadata": {
+        "id": "MnxzYuesYSiy"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "iris_2d=iris[:,:4].astype('float')\n",
+        "print(irirs_2d[:3])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bBndH_h4YViB",
+        "outputId": "70682a1d-3d74-47bd-e214-85b02afabcfa"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[5.1 3.5 1.4 0.2]\n",
+            " [4.9 3.  1.4 0.2]\n",
+            " [4.7 3.2 1.3 0.2]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex28"
+      ],
+      "metadata": {
+        "id": "KDm-u1JKY6t1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sepal_length = iris_2d[:, 0]\n",
+        "\n",
+        "mean_val = np.mean(sepal_length)\n",
+        "median_val = np.median(sepal_length)\n",
+        "std_val = np.std(sepal_length)\n",
+        "print(mean_val, median_val, std_val)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nkX8TsQaZHns",
+        "outputId": "7ce16ecc-cd0c-4d1b-ff6c-dce4d526787f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5.843333333333334 5.8 0.8253012917851409\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex29"
+      ],
+      "metadata": {
+        "id": "7X9TlwuUZM7Q"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sepal_length = iris_2d[:, 0]\n",
+        "\n",
+        "Smin = sepal_length.min()\n",
+        "Smax = sepal_length.max()\n",
+        "norma_sepal = (sepal_length - Smin) / (Smax - Smin)\n",
+        "print(norma_sepal[:5])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1PsQxOJhZOPf",
+        "outputId": "87d8abe4-9220-493d-a5b8-e7f58b282b21"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0.222222 0.166667 0.111111 0.083333 0.194444]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex30"
+      ],
+      "metadata": {
+        "id": "u8eFCfUNZnpd"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "exp_sepal = np.exp(sepal_length)\n",
+        "softmax_score = exp_sepal / np.sum(exp_sepal)\n",
+        "print(softmax_score[:5])\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xWyCmQ8jZpRV",
+        "outputId": "cce3ce61-b36f-4fdf-d412-8a5ec6cf5865"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0.00222  0.001817 0.001488 0.001346 0.002008]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex31"
+      ],
+      "metadata": {
+        "id": "S_4_2NH0aUG_"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "percentiles = np.percentile(sepal_length, [5, 95])\n",
+        "print(percentiles[0])\n",
+        "print(percentiles[1])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TG6Z2K57aVSS",
+        "outputId": "f67d4301-a086-43d1-e70f-47d519887b8f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "4.6\n",
+            "7.254999999999998\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex32"
+      ],
+      "metadata": {
+        "id": "sCkizC7YavmR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num_rows, num_cols = iris_2d.shape\n",
+        "np.random.seed(100)\n",
+        "i_rows = np.random.randint(0, num_rows, size=20)\n",
+        "i_cols = np.random.randint(0, num_cols, size=20)\n",
+        "iris_2d[i_rows, i_cols] = np.nan"
+      ],
+      "metadata": {
+        "id": "fcsUVZcYayDW"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex33"
+      ],
+      "metadata": {
+        "id": "Dz3lhtfYbSXo"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nan_mask = np.isnan(sepal_length)\n",
+        "num_missing = nan_mask.sum()\n",
+        "positions = np.where(nan_mask)\n",
+        "print(\"Number of missing values:\", num_missing)\n",
+        "print(\"Position of missing values:\", positions[0])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "X7SIQ5nGbTVG",
+        "outputId": "f3da4a11-3a99-4c71-d7f8-136b5276e0ff"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Number of missing values: 4\n",
+            "Position of missing values: [14 34 79 87]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex34"
+      ],
+      "metadata": {
+        "id": "n9RKAHdRblmi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "cond1 = iris_2d[:, 2] > 1.5\n",
+        "cond2 = iris_2d[:, 0] < 5.0\n",
+        "filtered_rows = iris_2d[cond1 & cond2]\n",
+        "print(filtered_rows)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KMnyp3IHbq70",
+        "outputId": "84fc9ff4-806a-4add-f655-d96499ffb02e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[4.8 3.4 1.6 0.2]\n",
+            " [4.7 3.2 1.6 0.2]\n",
+            " [4.8 3.1 1.6 0.2]\n",
+            " [4.9 2.4 3.3 1. ]\n",
+            " [4.9 2.5 4.5 1.7]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex35"
+      ],
+      "metadata": {
+        "id": "mG_DaYqIbxlR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "rows_with_nan = np.isnan(iris_2d).any(axis=1)\n",
+        "clean_iris_2d = iris_2d[~rows_with_nan]\n",
+        "print(iris_2d.shape)\n",
+        "print(clean_iris_2d.shape)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "43JPidIKbyvP",
+        "outputId": "61f6ff1d-dd91-436a-e664-1c561d2ec6b4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(150, 4)\n",
+            "(131, 4)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex36"
+      ],
+      "metadata": {
+        "id": "ZsVoDcFOcYsh"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "sepal_length = iris_2d[:, 0]\n",
+        "petal_length = iris_2d[:, 2]\n",
+        "corr_matrix = np.corrcoef(sepal_length, petal_length)\n",
+        "correlation_value = corr_matrix[0, 1]\n",
+        "\n",
+        "print(\"Correlation Matrix:\\n\", corr_matrix)\n",
+        "print(correlation_value)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sa53mY_NcsWD",
+        "outputId": "312ce85d-20b2-4351-dff1-c329909de97f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Correlation Matrix:\n",
+            " [[nan nan]\n",
+            " [nan nan]]\n",
+            "nan\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex37"
+      ],
+      "metadata": {
+        "id": "XSAl_kCEc4hl"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "has_nan = np.isnan(iris_2d).any()\n",
+        "print(has_nan)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HNsWd6C2dV-Z",
+        "outputId": "c10c8f54-5573-48e0-966e-f75c8ff80d0a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex38"
+      ],
+      "metadata": {
+        "id": "PZyRk3PPdiwq"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "iris_2d[np.isnan(iris_2d)] = 0\n",
+        "print(has_nan)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_B_m6oBBdflO",
+        "outputId": "0476d39a-b17e-4a02-e9c7-c50ab449332c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex39"
+      ],
+      "metadata": {
+        "id": "efRasfcVeAt1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "species = iris[:, 4]\n",
+        "unique_vals, counts = np.unique(species, return_counts=True)\n",
+        "print(\"Unique values:\", unique_vals)\n",
+        "print(\"Counts:\", counts)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FmaVOE4yeB05",
+        "outputId": "e1557f27-b9a2-4a3f-9c35-cfe6aebde387"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Unique values: [b'Iris-setosa' b'Iris-versicolor' b'Iris-virginica']\n",
+            "Counts: [50 50 50]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex40"
+      ],
+      "metadata": {
+        "id": "qkHscCONeX_m"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "petal_length = iris_2d[:, 2]\n",
+        "conditions = [(petal_length < 3),((petal_length >= 3) & (petal_length < 5)),(petal_length >= 5)]\n",
+        "choices = ['small','medium','large']\n",
+        "binned_petal = np.select(conditions, choices)\n",
+        "print(binned_petal[:10])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 523
+        },
+        "id": "nyPlFzUZeZDK",
+        "outputId": "b6373934-bca8-485e-d770-e08971321086"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "TypeError",
+          "evalue": "Choicelist and default value do not have a common dtype: The DType <class 'numpy.dtypes._PyLongDType'> could not be promoted by <class 'numpy.dtypes.StrDType'>. This means that no common DType exists for the given inputs. For example they cannot be stored in a single array unless the dtype is `object`. The full list of DTypes is: (<class 'numpy.dtypes.StrDType'>, <class 'numpy.dtypes.StrDType'>, <class 'numpy.dtypes.StrDType'>, <class 'numpy.dtypes._PyLongDType'>)",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_4209/1459352486.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0mconditions\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m[\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mpetal_length\u001b[0m \u001b[0;34m<\u001b[0m \u001b[0;36m3\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mpetal_length\u001b[0m \u001b[0;34m>=\u001b[0m \u001b[0;36m3\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m&\u001b[0m \u001b[0;34m(\u001b[0m\u001b[0mpetal_length\u001b[0m \u001b[0;34m<\u001b[0m \u001b[0;36m5\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mpetal_length\u001b[0m \u001b[0;34m>=\u001b[0m \u001b[0;36m5\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0mchoices\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m[\u001b[0m\u001b[0;34m'small'\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m'medium'\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m'large'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 4\u001b[0;31m \u001b[0mbinned_petal\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mnp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mselect\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mconditions\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mchoices\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      5\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mbinned_petal\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;36m10\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/numpy/lib/_function_base_impl.py\u001b[0m in \u001b[0;36mselect\u001b[0;34m(condlist, choicelist, default)\u001b[0m\n\u001b[1;32m    858\u001b[0m     \u001b[0;32mexcept\u001b[0m \u001b[0mTypeError\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0me\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    859\u001b[0m         \u001b[0mmsg\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34mf'Choicelist and default value do not have a common dtype: {e}'\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 860\u001b[0;31m         \u001b[0;32mraise\u001b[0m \u001b[0mTypeError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mmsg\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mfrom\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    861\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    862\u001b[0m     \u001b[0;31m# Convert conditions to arrays and broadcast conditions and choices\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mTypeError\u001b[0m: Choicelist and default value do not have a common dtype: The DType <class 'numpy.dtypes._PyLongDType'> could not be promoted by <class 'numpy.dtypes.StrDType'>. This means that no common DType exists for the given inputs. For example they cannot be stored in a single array unless the dtype is `object`. The full list of DTypes is: (<class 'numpy.dtypes.StrDType'>, <class 'numpy.dtypes.StrDType'>, <class 'numpy.dtypes.StrDType'>, <class 'numpy.dtypes._PyLongDType'>)"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex41"
+      ],
+      "metadata": {
+        "id": "tcOsnm_Xe5WV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "sepal_length = iris_2d[:, 0]\n",
+        "petal_length = iris_2d[:, 2]\n",
+        "volume = (np.pi * petal_length * (sepal_length ** 2)) / 3\n",
+        "volume_column = volume.reshape(-1, 1)\n",
+        "iris_with_volume = np.hstack((iris_2d, volume_column))\n",
+        "print(\"New array shape:\", iris_with_volume.shape)\n",
+        "print(\"\\nFirst 3 rows:\\n\", iris_with_volume[:3])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rsXhM70Ke62f",
+        "outputId": "14178047-f907-49db-a434-b6f12b1c4b7c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "New array shape: (150, 5)\n",
+            "\n",
+            "First 3 rows:\n",
+            " [[ 5.1       3.5       1.4       0.2      38.132652]\n",
+            " [ 4.9       3.        1.4       0.2      35.200498]\n",
+            " [ 4.7       3.2       1.3       0.2      30.072372]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex42"
+      ],
+      "metadata": {
+        "id": "v8sYoKL2fjkk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "species = iris[:, 4]\n",
+        "species_outcomes = [b'Iris-setosa', b'Iris-versicolor', b'Iris-virginica']\n",
+        "probabilities = [0.50, 0.25, 0.25]\n",
+        "np.random.seed(100)\n",
+        "sampled_species = np.random.choice(species_outcomes, size=150, p=probabilities)\n",
+        "unique_vals, counts = np.unique(sampled_species, return_counts=True)\n",
+        "print(dict(zip(unique_vals, counts)))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "j9uDlIRAipDo",
+        "outputId": "1215e38b-61d6-4da7-82c9-e09caadf2dcd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{np.bytes_(b'Iris-setosa'): np.int64(77), np.bytes_(b'Iris-versicolor'): np.int64(37), np.bytes_(b'Iris-virginica'): np.int64(36)}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex43"
+      ],
+      "metadata": {
+        "id": "sB8jcp4Hi2wA"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "setosa_mask = (iris[:, 4] == b'Iris-setosa')\n",
+        "setosa_petal_lengths = iris_2d[setosa_mask, 2]\n",
+        "unique_lengths = np.unique(setosa_petal_lengths)\n",
+        "second_longest = unique_lengths[-2]\n",
+        "\n",
+        "print(second_longest)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rAU_Yo_Ji4An",
+        "outputId": "1ca65d50-df1e-4baf-ad86-b149e358c34e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1.7\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex44"
+      ],
+      "metadata": {
+        "id": "_ZjnRBWSjKEn"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "sorted_indices = np.argsort(iris_2d[:, 0])\n",
+        "sorted_iris_2d = iris_2d[sorted_indices]\n",
+        "print(sorted_iris_2d[:5])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1FUL7lN6jJwF",
+        "outputId": "a9b66e46-fa6d-4f8d-da9a-43f4731f44fa"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[4.3 3.  1.1 0.1]\n",
+            " [4.4 2.9 1.4 0.2]\n",
+            " [4.4 3.2 1.3 0.2]\n",
+            " [4.4 3.  1.3 0.2]\n",
+            " [4.5 2.3 1.3 0.3]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex45"
+      ],
+      "metadata": {
+        "id": "jvUVvH0GjRRg"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "petal_length = iris_2d[:, 2]\n",
+        "vals, counts = np.unique(petal_length, return_counts=True)\n",
+        "highest_count_index = np.argmax(counts)\n",
+        "most_frequent = vals[highest_count_index]\n",
+        "print(\"Most frequent value:\", most_frequent)\n",
+        "print(\"Appearance count:\", counts[highest_count_index])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bXnoER3SkqYP",
+        "outputId": "7019f96a-2537-4a51-a371-c107a870e7ae"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Most frequent value: 1.5\n",
+            "Appearance count: 14\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex46"
+      ],
+      "metadata": {
+        "id": "L7rWh6YPkzRi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "petal_width = iris_2d[:, 3]\n",
+        "condition_mask = petal_width > 1.0\n",
+        "first_position = np.argmax(condition_mask)\n",
+        "print(\"Position of the first occurrence:\", first_position)\n",
+        "print(\"Value at that position:\", petal_width[first_position])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iRCIH4bwk512",
+        "outputId": "08c7a57d-9693-419c-ac76-9922f9d66803"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Position of the first occurrence: 50\n",
+            "Value at that position: 1.4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex47"
+      ],
+      "metadata": {
+        "id": "5ThfODG8lCJu"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "clipped_array = np.clip(a, a_min=10, a_max=30)\n",
+        "\n",
+        "print(\"Original array preview:\\n\", a[:5])\n",
+        "print(\"\\nClipped array preview:\\n\", clipped_array[:5])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DlrM1u9LlFD-",
+        "outputId": "968827a0-e185-45e9-bd58-08b2728cd1ce"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original array preview:\n",
+            " [0 1 2 3 4]\n",
+            "\n",
+            "Clipped array preview:\n",
+            " [10 10 10 10 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex48"
+      ],
+      "metadata": {
+        "id": "RMEWSCkFlLD4"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "pFm8bDy9v2dE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sorted_indices = np.argsort(a)\n",
+        "top_5_positions = sorted_indices[-5:][::-1]\n",
+        "\n",
+        "print(\"Positions of top 5 max values:\", top_5_positions)\n",
+        "print(\"Actual top values for verification:\", a[top_5_positions])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JnJU6yKzlW5l",
+        "outputId": "994ec944-1822-462e-9dc5-cb2783bfb158"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Positions of top 5 max values: [14 13 12 11 10]\n",
+            "Actual top values for verification: [14 13 12 11 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex49"
+      ],
+      "metadata": {
+        "id": "p7f6DFo4lcNA"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "row_wise_counts = []\n",
+        "\n",
+        "for row in arr:\n",
+        "    vals, counts = np.unique(row, return_counts=True)\n",
+        "    row_wise_counts.append(dict(zip(vals, counts)))\n",
+        "\n",
+        "\n",
+        "for i, counts_dict in enumerate(row_wise_counts[:3]):\n",
+        "    print(f\"Row {i} unique counts: {counts_dict}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uZW9q8islfEN",
+        "outputId": "d77a0d65-b85c-4ffd-9b5e-79a4c4e8ed76"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Row 0 unique counts: {np.float64(6.65161185281044): np.int64(1), np.float64(8.376959179561814): np.int64(1), np.float64(9.274956525749545): np.int64(1)}\n",
+            "Row 1 unique counts: {np.float64(7.324855613671579): np.int64(1), np.float64(7.479148406780496): np.int64(1), np.float64(9.361999661783852): np.int64(1)}\n",
+            "Row 2 unique counts: {np.float64(8.013908427188339): np.int64(1), np.float64(8.92624956550151): np.int64(1), np.float64(9.80605313510517): np.int64(1)}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ex50"
+      ],
+      "metadata": {
+        "id": "9F1LHzoTlnIb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "arr1 = np.arange(3)\n",
+        "arr2 = np.arange(3, 7)\n",
+        "arr3 = np.arange(7, 10)\n",
+        "arr_2d = np.array([arr1, arr2, arr3], dtype=object)\n",
+        "\n",
+        "flat_array = np.concatenate(arr_2d)\n",
+        "\n",
+        "print(flat_array)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Z8Y6jg3SloWn",
+        "outputId": "51221ee4-0e77-4c7f-e9c2-4094a9d67f89"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0 1 2 3 4 5 6 7 8 9]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
